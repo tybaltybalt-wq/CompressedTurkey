@@ -1,0 +1,67 @@
+# Checks the site against the design rules, then publishes it to GitHub Pages.
+# Runs on every upload to main, or by hand from the Actions tab ("Run workflow").
+
+name: Check and deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Check design rules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Only the six palette colours
+        run: |
+          bad=$(grep -rhoiE '#[0-9a-f]{6}\b|#[0-9a-f]{3}\b|%23[0-9a-f]{6}' --include=*.html --include=*.css --include=*.js . \
+            | sed 's/%23/#/' | tr a-f A-F | sort -u \
+            | grep -vxE '#(0B6B3A|064D2A|FFFFFF|F7F5EE|C9A227|111111)' || true)
+          if [ -n "$bad" ]; then echo "::error::Colours outside the palette: $bad"; exit 1; fi
+          if grep -rnoiE 'rgba?\(|hsla?\(|\b(red|blue|orange|purple|grey|gray|silver|navy|yellow)\b' --include=*.html --include=*.css --include=*.js .; then
+            echo "::error::rgb/hsl or named colours found (listed above)"; exit 1
+          fi
+          echo "Palette OK"
+
+      - name: Helvetica only
+        run: |
+          if grep -rnE 'font-family:' --include=*.html --include=*.css --include=*.js . \
+              | grep -vE 'var\(--font\)|"Helvetica Neue", Helvetica, Arial, sans-serif'; then
+            echo "::error::font-family other than Helvetica (listed above)"; exit 1
+          fi
+          if grep -rniE 'fonts\.googleapis|@import|@font-face' --include=*.html --include=*.css --include=*.js .; then
+            echo "::error::External font or import found (listed above)"; exit 1
+          fi
+          echo "Fonts OK"
+
+      - name: Data files are valid JSON
+        run: |
+          for f in data/*.json; do jq empty "$f" && echo "$f OK"; done
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
