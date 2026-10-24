@@ -1,0 +1,80 @@
+{
+  "_howToEdit": "Each block between { and } is one place. Change the text between the quotes. Keep the commas between blocks. category must be one of: industry, fair, museum, craft, food, transport. locationPrecision is exact or approximate. lastVerified: write the date you checked, e.g. 2026-11-02.",
+  "places": [
+    {
+      "id": "rahmi-koc-museum",
+      "name": "Rahmi M. Koç Museum",
+      "city": "Istanbul",
+      "category": "museum",
+      "lat": 41.0425,
+      "lng": 28.9490,
+      "locationPrecision": "approximate",
+      "description": "A large museum of industry, transport and communications on the Golden Horn, with engines, vehicles, machinery and scientific instruments.",
+      "whyItMatters": "A hands-on look at the history of machines and manufacturing in Turkey and beyond. Good for spotting early moulded parts in vintage vehicles, radios and household objects.",
+      "bestTime": "Weekday mornings are usually quieter. [Verify: opening days and hours on the official site]",
+      "howToGetThere": "On the north shore of the Golden Horn in the Hasköy area. Reach it by taxi or by the Golden Horn ferry line. [Verify: current ferry route and stop]",
+      "website": "https://www.rmk-museum.org.tr",
+      "lastVerified": "Not yet verified"
+    },
+    {
+      "id": "tuyap-istanbul",
+      "name": "TÜYAP Fair Convention and Congress Center",
+      "city": "Istanbul",
+      "category": "fair",
+      "lat": 41.0100,
+      "lng": 28.6200,
+      "locationPrecision": "approximate",
+      "description": "One of Istanbul's main exhibition centres, on the western side of the city, run by the trade fair organiser TÜYAP.",
+      "whyItMatters": "Venue for large industry shows, including the plastics industry fair Plast Eurasia Istanbul. A fair is the easiest way to meet many moulders, material suppliers and press makers in one day.",
+      "bestTime": "During a relevant trade fair. [Verify: fair dates and venue on the organiser's official site]",
+      "howToGetThere": "On the European side, west of the city centre. Reachable by Metrobüs or taxi; allow plenty of time in traffic. [Verify: nearest public transport stop]",
+      "website": "https://www.tuyap.com.tr",
+      "lastVerified": "Not yet verified"
+    },
+    {
+      "id": "bursa-industry",
+      "name": "Bursa automotive and supplier cluster",
+      "city": "Bursa",
+      "category": "industry",
+      "lat": 40.1950,
+      "lng": 29.0600,
+      "locationPrecision": "approximate",
+      "description": "Bursa is one of Turkey's main automotive cities, with vehicle plants and a wide supplier base in its organised industrial zones. This marker shows the city, not a specific site.",
+      "whyItMatters": "Automotive suppliers use compression moulding for SMC panels, rubber seals and mounts, and other thermoset parts. Factory visits are only possible by prior arrangement with each company.",
+      "bestTime": "Weekdays outside public and religious holidays, when plants are working. Spring and autumn are pleasant for sightseeing.",
+      "howToGetThere": "From Istanbul by road (about 2 to 3 hours depending on traffic) or by fast ferry across the Sea of Marmara plus a bus or taxi connection. [Verify: current ferry operators and timetables]",
+      "website": "",
+      "lastVerified": "Not yet verified"
+    },
+    {
+      "id": "kutahya-ceramics",
+      "name": "Kütahya ceramics town",
+      "city": "Kütahya",
+      "category": "craft",
+      "lat": 39.4200,
+      "lng": 29.9850,
+      "locationPrecision": "approximate",
+      "description": "Kütahya has a long tradition of hand-painted tiles and pottery (çini) and is also home to modern ceramic tile and sanitaryware production. This marker shows the city centre.",
+      "whyItMatters": "Modern ceramic tiles are formed by pressing powder in a die, a close relative of compression moulding. Here you can compare industrial pressing with traditional hand-formed and hand-painted work.",
+      "bestTime": "Spring to autumn. [Verify: dates of any local ceramics festival]",
+      "howToGetThere": "By road or train via Eskişehir, or by intercity bus from Istanbul, Ankara and Bursa. [Verify: current train services]",
+      "website": "",
+      "lastVerified": "Not yet verified"
+    },
+    {
+      "id": "istanbul-airport",
+      "name": "Istanbul Airport (IST)",
+      "city": "Istanbul",
+      "category": "transport",
+      "lat": 41.2753,
+      "lng": 28.7519,
+      "locationPrecision": "approximate",
+      "description": "Istanbul's main international airport on the European side, and the most likely arrival point for an international visitor.",
+      "whyItMatters": "The starting point for most trips. Domestic flights connect to Izmir, Ankara, Kayseri and other cities on the itinerary.",
+      "bestTime": "Year-round. Leave extra time at public holidays, which are the busiest travel periods.",
+      "howToGetThere": "Metro line M11 runs to the city, and airport buses and taxis are also available. [Verify: current metro and bus routes]",
+      "website": "https://www.istairport.com",
+      "lastVerified": "Not yet verified"
+    }
+  ]
+}

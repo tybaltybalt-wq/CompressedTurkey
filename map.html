@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive map | Turkey for Compression Moulding Enthusiasts</title>
+  <meta name="description" content="Map of industry clusters, trade fairs, museums, craft towns, food and transport hubs across Turkey.">
+  <meta name="theme-color" content="#064D2A">
+  <!-- Leaflet map library (loaded from a CDN, no API key needed) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <h1>Interactive map</h1>
+        <p class="lede">Industry clusters, trade fairs, museums, craft towns, food and transport hubs.
+          Choose a marker to see why it matters for compression moulding.</p>
+      </div>
+    </section>
+    <div class="pattern-band" aria-hidden="true"></div>
+
+    <section class="section section--tight">
+      <div class="container">
+
+        <div class="map-filters-wrap">
+          <h2 class="map-filters__title" id="filters-title">Show on map</h2>
+          <div class="map-filters" id="map-filters" role="group" aria-labelledby="filters-title"></div>
+          <p class="map-count" id="place-count" aria-live="polite"></p>
+        </div>
+
+        <div class="map-layout">
+          <div class="map-frame">
+            <div id="map" role="region" aria-label="Map of Turkey with places to visit"></div>
+            <p class="map-hint">Tip: click the map once to zoom with your mouse wheel.</p>
+          </div>
+          <aside class="place-card" id="place-card" aria-live="polite">
+            <h2>Choose a place</h2>
+            <p>Select a marker on the map, or a place from the list below, to see its details here.</p>
+          </aside>
+        </div>
+
+        <h2 class="place-list__title">All places</h2>
+        <ul class="place-list" id="place-list"></ul>
+
+        <div class="notice">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <circle cx="24" cy="24" r="19"/><path d="M24 22v12"/>
+              <circle cx="24" cy="15" r="1.5" fill="currentColor"/>
+            </g>
+          </svg>
+          <div>
+            <p><strong>Factory visits require prior permission.</strong> Industry markers show
+              regions, not open sites, and this guide does not guarantee access.</p>
+            <p>Marker positions marked "approximate" show the general area. Check details with
+              official sources before you travel.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/app.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/map.js"></script>
+</body>
+</html>
